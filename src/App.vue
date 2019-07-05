@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Mrrgl/>
+    <div>
+      Tooltips by <a href="https://www.wowhead.com/tooltips">wowhead</a>
+    </div>
   </div>
 </template>
 
