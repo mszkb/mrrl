@@ -14,3 +14,9 @@ Source: https://www.wowhead.com/guides/mrrls-trading-game-obtaining-crimson-tide
 The idea is to shorten the time of Mrrl's game. The app is currently a simple calculator which calculates 
 the price of each item. You start the day and look at Mrrl's item and enter the required items into the app. 
 The app shows which items are needed and which dealer sells them.
+
+## Further development
+
+- automatic shopping list at daily reset
+- Show item sold by Mrrl
+- Mount alert
