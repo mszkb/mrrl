@@ -20,3 +20,4 @@ The app shows which items are needed and which dealer sells them.
 - automatic shopping list at daily reset
 - Show item sold by Mrrl
 - Mount alert
+- better styling
