@@ -2,7 +2,12 @@
   <div id="app">
     <Mrrgl/>
     <div>
-      Tooltips by <a href="https://www.wowhead.com/tooltips">wowhead</a>
+      Tooltips by <a href="https://www.wowhead.com/tooltips">wowhead</a><br />
+      View on <a href="https://github.com/mszkb/mrrl" target="_blank">github <b-icon
+      icon="github-circle"
+      size="is-medium">
+    </b-icon></a>
+    
     </div>
   </div>
 </template>
@@ -25,6 +30,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 60px;
+  position: relative;
 }
 </style>
