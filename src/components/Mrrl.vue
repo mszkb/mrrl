@@ -38,7 +38,7 @@ export default {
       publicPath: process.env.BASE_URL,
       wowheadIDnormal: 0,
       wowheadIDspecial: 0,
-      itemSwitch: true
+      itemSwitch: false
     }
   },
   mounted () {

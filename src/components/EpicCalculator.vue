@@ -18,50 +18,57 @@
 
             <div v-show="mod[index] > 0">
                 <div>
-                    <div v-for="(rare, rareId) in blues(item.needitemid, item)" :key="'rare'+rareId">
-                        <div class="blue">
+                    <div v-for="(rare, rareId) in blues(item.needitemid, item)" :key="'rare'+rareId"  class="shopping-list">
+                        <div class="blue item-box">
                             <a :data-wowhead="`item=${rare.itemid}`" target="_blank">
                                 <img :src="getImgUrl(rare.icon)" :alt="rare.itemname"/>
                             </a>
-                            <div class="needed-amount">{{ item.amount[rareId] * mod[index] }}x</div>
-                            <div class="vendor">
-                                <a :data-wowhead="`npc=${getvendor(rare.vendorid).id}`">
-                                    {{ getvendor(rare.vendorid).name }}
-                                </a>
+                            <div class="item-info">
+                                <span class="needed-amount">{{ item.amount[rareId] * mod[index] }}x</span><br />
+                                <span class="vendor">
+                                    <a :data-wowhead="`npc=${getvendor(rare.vendorid).id}`">
+                                        from {{ getvendor(rare.vendorid).name }}
+                                    </a>
+                                </span>
                             </div>
+
                         </div>
 
                         <div>
                             <div v-for="(green, greenId) in greens(rare.needitemid)" :key="'green'+greenId">
-                                <div class="green">
+                                <div class="green item-box">
                                     <a :data-wowhead="`item=${green.itemid}`" target="_blank">
                                         <img :src="getImgUrl(green.icon)" :alt="green.itemname"/>
                                     </a>
-                                    <div class="needed-amount">{{ rare.amount[greenId] * item.amount[rareId] *
+                                    <div class="item-info">
+                                        <span class="needed-amount">{{ rare.amount[greenId] * item.amount[rareId] *
                                         mod[index]
                                         }}x
-                                    </div>
-                                    <div class="vendor">
-                                        <a :data-wowhead="`npc=${getvendor(green.vendorid).id}`">
-                                            {{ getvendor( green.vendorid).name }}
-                                        </a>
+                                        </span><br />
+                                        <span class="vendor">
+                                            <a :data-wowhead="`npc=${getvendor(green.vendorid).id}`">
+                                                from {{ getvendor( green.vendorid).name }}
+                                            </a>
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <div v-for="(white, whiteId) in whites(green.needitemid)" :key="'white'+whiteId">
-                                        <div class="white">
+                                        <div class="white item-box">
 
                                             <a :data-wowhead="`item=${white.itemid}`" target="_blank">
                                                 <img :src="getImgUrl(white.icon)" :alt="white.itemname"/>
                                             </a>
-                                            <div class="needed-amount">{{ green.amount[whiteId] * rare.amount[greenId] *
-                                                item.amount[rareId] * mod[index] }}x
-                                            </div>
-                                            <div class="vendor">
-                                                <a :data-wowhead="`npc=${getvendor(white.vendorid).id}`">
-                                                    {{ getvendor( white.vendorid).name }}
-                                                </a>
+                                            <div class="item-info">
+                                                <span class="needed-amount">{{ green.amount[whiteId] * rare.amount[greenId] *
+                                                    item.amount[rareId] * mod[index] }}x
+                                                </span><br />
+                                                <span class="vendor">
+                                                    <a :data-wowhead="`npc=${getvendor(white.vendorid).id}`">
+                                                        from{{ getvendor( white.vendorid).name }}
+                                                    </a>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +168,6 @@
 
     .vendor {
         text-decoration: underline;
-        margin-bottom: 10px;
     }
 
     section {
@@ -170,45 +176,57 @@
         margin: 0 auto;
     }
 
+
+    .item-info {
+        position: absolute;
+        top: 10px;
+        left: 70px;
+    }
+
+    .item-box {
+        padding: 2px;
+        text-align: left;
+        line-height: 20px;
+        height: 66px;
+        position: relative;
+        margin-bottom: 10px;
+        transition: 0.3s all ease-in-out;
+    }
+
     .epic {
         border: 3px solid #a335ee;
-        padding: 10px;
-        margin-bottom: 10px;
     }
 
     .blue {
         border: 3px solid #0070dd;
-        padding: 10px;
-        margin-bottom: 10px;
     }
 
     .green {
         border: 3px solid #1eff00;
-        padding: 10px;
+    }
+
+    .white {
+        border: 3px solid transparent;
     }
 
     .green > div + div {
         border-top: none;
     }
 
-    .white > div {
-        border: 3px solid transparent;
-        padding: 10px;
-    }
-
-    .white > div, .green > div, .blue {
-        transition: 0.3s all ease-in-out;
-    }
-
-    .white > div:hover {
+    .white:hover {
         box-shadow: 0px 0px 15px 0px rgba(10, 10, 10, .3);
     }
 
-    .green > div:hover {
+    .green:hover {
         box-shadow: 0px 0px 15px 0px rgba(30, 255, 0, .7);
     }
 
     .blue:hover {
         box-shadow: 0px 0px 15px 0px rgba(0, 112, 221, .7);
     }
+
+    .shopping-list {
+        margin-bottom: 30px;
+    }
+
 </style>
