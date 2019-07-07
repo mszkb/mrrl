@@ -195,6 +195,8 @@
 
     .epic {
         border: 3px solid #a335ee;
+        padding: 10px;
+        margin-bottom: 10px;
     }
 
     .blue {

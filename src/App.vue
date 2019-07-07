@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Mrrgl/>
-    <div>
+    <div style="margin-top: 10px">
       Tooltips by <a href="https://www.wowhead.com/tooltips">wowhead</a><br />
       View on <a href="https://github.com/mszkb/mrrl" target="_blank">github <b-icon
       icon="github-circle"

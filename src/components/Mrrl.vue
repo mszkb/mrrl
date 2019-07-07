@@ -7,8 +7,8 @@
     <b-switch v-model="itemSwitch">
       {{ itemSwitch ? "Epic" : "Rare" }}
     </b-switch>
-    <div v-if="itemSwitch">
-      You need the special back to see them
+    <div v-if="itemSwitch" style="margin-top: 10px; margin-bottom: 10px">
+      <a style="padding: 5px" href="https://ptr.wowhead.com/item=169489/azshari-stormsurger-cape">You need the special back to see them</a>
     </div>
     <section v-if="itemSwitch">
       <EpicCalculator />
