@@ -27,7 +27,7 @@
                                 <span class="needed-amount">{{ item.amount[rareId] * mod[index] }}x</span><br />
                                 <span class="vendor">
                                     <a :data-wowhead="`npc=${getvendor(rare.vendorid).id}`">
-                                        from {{ getvendor(rare.vendorid).name }}
+                                        {{ getvendor(rare.vendorid).name }}
                                     </a>
                                 </span>
                             </div>
@@ -47,7 +47,7 @@
                                         </span><br />
                                         <span class="vendor">
                                             <a :data-wowhead="`npc=${getvendor(green.vendorid).id}`">
-                                                from {{ getvendor( green.vendorid).name }}
+                                                {{ getvendor( green.vendorid).name }}
                                             </a>
                                         </span>
                                     </div>
@@ -66,7 +66,7 @@
                                                 </span><br />
                                                 <span class="vendor">
                                                     <a :data-wowhead="`npc=${getvendor(white.vendorid).id}`">
-                                                        from{{ getvendor( white.vendorid).name }}
+                                                        {{ getvendor( white.vendorid).name }}
                                                     </a>
                                                 </span>
                                             </div>
