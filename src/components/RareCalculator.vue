@@ -16,89 +16,101 @@
                 </b-field>
             </div>
 
-            <div  v-show="mod[index] > 0">
-                <div class="green" v-if="item.needitemid.length === 2">
-                    <div>
+            <div v-show="mod[index] > 0">
+                <div v-if="item.needitemid.length === 2">
+                    <div class="green item-box">
                         <a :data-wowhead="`item=${item.needitemid[0]}`" target="_blank">
                             <img :src="getImgUrl(nextItem(item.needitemid[0]).icon)" :alt="item.itemname"/>
                         </a>
-                        <div class="itemname item-uncommon">{{ nextItem(item.needitemid[0]).itemname }}</div>
-                        <div class="needed-amount">{{ item.amount[0] * mod[index] }}x</div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
-                                {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
+                                    {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="green item-box">
                         <a :data-wowhead="`item=${item.needitemid[1]}`" target="_blank">
                             <img :src="getImgUrl(nextItem(item.needitemid[1]).icon)" :alt="item.itemname"/>
                         </a>
-                        <div class="itemname item-uncommon">{{ nextItem(item.needitemid[1]).itemname }}</div>
-                        <div class="needed-amount">{{ item.amount[1] * mod[index] }}x</div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[1]).vendorid).id}`">
-                                {{ getvendor(nextItem(item.needitemid[1]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{ item.amount[1] * mod[index] }}x</span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[1]).vendorid).id}`">
+                                    {{ getvendor(nextItem(item.needitemid[1]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <div v-else class="green">
-                    <div>
+                <div v-else>
+                    <div class="green item-box">
                         <a :data-wowhead="`item=${item.needitemid[0]}`" target="_blank">
                             <img :src="getImgUrl(nextItem(item.needitemid[0]).icon)" :alt="item.itemname"/>
                         </a>
-                        <div class="itemname item-uncommon">{{ nextItem(item.needitemid[0]).itemname }}</div>
-                        <div class="needed-amount">{{ item.amount[0] * mod[index] }}x</div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
-                                {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
+                                    {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="white" v-if="item.needitemid.length === 2">
-                    <div>
+                <div v-if="item.needitemid.length === 2">
+                    <div class="white item-box">
                         <a :data-wowhead="`item=${nextItem(item.needitemid[0]).needitemid[0]}}`" target="_blank">
-                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[0]).needitemid[0]).icon)" :alt="item.itemname"/>
+                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[0]).needitemid[0]).icon)"
+                                 :alt="item.itemname"/>
                         </a>
-                        <div class="itemname item-common">{{ nextItem(nextItem(item.needitemid[0]).needitemid[0]).itemname }}</div>
-                        <div class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] * mod[index] }}x
-                        </div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
-                                {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] *
+                                mod[index] }}x
+                            </span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
+                                    {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
-                    <div>
+                    <div class="white item-box">
                         <a :data-wowhead="`item=${nextItem(item.needitemid[1]).needitemid[0]}}`" target="_blank">
-                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[1]).needitemid[0]).icon)" :alt="item.itemname"/>
+                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[1]).needitemid[0]).icon)"
+                                 :alt="item.itemname"/>
                         </a>
-                        <div class="itemname item-common">{{ nextItem(nextItem(item.needitemid[0]).needitemid[0]).itemname }}</div>
-                        <div class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[1]).amount[0] * mod[index] }}x
-                        </div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).id}`">
-                                {{ getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[1]).amount[0] *
+                                mod[index] }}x
+                            </span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).id}`">
+                                    {{ getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <div class="white" v-else>
-                    <div>
+                <div v-else>
+                    <div class="white item-box">
                         <a :data-wowhead="`item=${nextItem(item.needitemid[0]).needitemid[0]}}`" target="_blank">
-                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[0]).needitemid[0]).icon)" :alt="item.itemname"/>
+                            <img :src="getImgUrl(nextItem(nextItem(item.needitemid[0]).needitemid[0]).icon)"
+                                 :alt="item.itemname"/>
                         </a>
-                        <div class="itemname">{{ nextItem(nextItem(item.needitemid[0]).needitemid[0]).itemname }}</div>
-                        <div class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] * mod[index] }}x
-                        </div>
-                        <div class="vendor">
-                            <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
-                                {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
-                            </a>
+                        <div class="item-info">
+                            <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] *
+                                mod[index] }}x
+                            </span>
+                            <span class="vendor">
+                                <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
+                                    {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -111,36 +123,36 @@
     import {final, vendor, m} from "../assets/data";
 
     // You only need greens and white items
-  export default {
-    name: "RareCalculator",
-    data () {
-      return {
-        mod: [0,0,0,0,0]
-      }
-    },
-    computed: {
-      getRare () {
-        return final
-      }
-    },
-    methods: {
-      greens () {
-        // You probably need two greens for one blue
-      },
-      whites() {
-        // You only need one white item per green
-      },
-      nextItem(needid) {
-        return m[needid]
-      },
-      getvendor(id) {
-        return vendor[id]
-      },
-      getImgUrl(pic) {
-        return require('../assets/icons/'+pic+'.jpg')
-      }
+    export default {
+        name: "RareCalculator",
+        data() {
+            return {
+                mod: [0, 0, 0, 0, 0]
+            }
+        },
+        computed: {
+            getRare() {
+                return final
+            }
+        },
+        methods: {
+            greens() {
+                // You probably need two greens for one blue
+            },
+            whites() {
+                // You only need one white item per green
+            },
+            nextItem(needid) {
+                return m[needid]
+            },
+            getvendor(id) {
+                return vendor[id]
+            },
+            getImgUrl(pic) {
+                return require('../assets/icons/' + pic + '.jpg')
+            }
+        }
     }
-  }
 </script>
 
 <style scoped>
@@ -184,7 +196,6 @@
 
     .vendor {
         text-decoration: underline;
-        margin-bottom: 10px;
     }
 
     section {
@@ -192,6 +203,25 @@
         max-width: 1024px;
         margin: 0 auto;
     }
+
+
+    .item-info {
+        position: absolute;
+        top: 10px;
+        left: 70px;
+    }
+
+    .item-box {
+        position: relative;
+        padding: 2px;
+        text-align: left;
+        line-height: 20px;
+        height: 66px;
+        position: relative;
+        margin-bottom: 10px;
+        transition: 0.3s all ease-in-out;
+    }
+
     .epic {
         border: 3px solid #a335ee;
         padding: 10px;
@@ -200,37 +230,33 @@
 
     .blue {
         border: 3px solid #0070dd;
-        padding: 10px;
-        margin-bottom: 10px;
     }
 
-    .green > div {
+    .green {
         border: 3px solid #1eff00;
-        padding: 10px;
+    }
+
+    .white {
+        border: 3px solid transparent;
     }
 
     .green > div + div {
         border-top: none;
     }
 
-    .white > div {
-        border: 3px solid transparent;
-        padding: 10px;
-    }
-
-    .white > div, .green > div, .blue {
-        transition: 0.3s all ease-in-out;
-    }
-
-    .white > div:hover {
+    .white:hover {
         box-shadow: 0px 0px 15px 0px rgba(10, 10, 10, .3);
     }
 
-    .green > div:hover {
+    .green:hover {
         box-shadow: 0px 0px 15px 0px rgba(30, 255, 0, .7);
     }
 
     .blue:hover {
         box-shadow: 0px 0px 15px 0px rgba(0, 112, 221, .7);
+    }
+
+    .shopping-list {
+        margin-bottom: 30px;
     }
 </style>
