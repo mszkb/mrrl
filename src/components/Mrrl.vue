@@ -4,9 +4,8 @@
       <a data-wh-rename-link="false" target="_blank" href="https://www.wowhead.com/guides/mrrls-trading-game-obtaining-crimson-tidestallion">Mrrl's Trading Games</a>
     </h1>
     <h2 class="subtitle">Calculator</h2>
-    <b-switch v-model="itemSwitch">
-      {{ itemSwitch ? "Epic" : "Rare" }}
-    </b-switch>
+    <span class="switch-label">Rare</span><b-switch v-model="itemSwitch">
+    </b-switch><span class="switch-label">Epic</span>
     <div v-if="itemSwitch" style="margin-top: 10px; margin-bottom: 10px">
       <a style="padding: 5px" href="https://ptr.wowhead.com/item=169489/azshari-stormsurger-cape">You need the special back to see them</a>
     </div>
@@ -84,7 +83,20 @@ export default {
   }
 }
 </script>
+<style>
+  .switch {
+    margin-bottom: 10px;
+  }
 
+
+  .switch input[type="checkbox"] + .check {
+    background-color: #0070dd !important;
+  }
+
+  .switch input[type="checkbox"]:checked + .check {
+    background-color: #a335ee !important;
+  }
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
@@ -132,7 +144,7 @@ a:hover {
 
 section {
   margin-top: 40px;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .epic {
@@ -176,5 +188,13 @@ section {
 .blue:hover {
   box-shadow: 0px 0px 15px 0px rgba(0, 112, 221, .7);
 }
+
+.switch-label {
+  line-height: 20px;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
 
 </style>

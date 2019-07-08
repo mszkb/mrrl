@@ -23,7 +23,7 @@
                             <img :src="getImgUrl(nextItem(item.needitemid[0]).icon)" :alt="item.itemname"/>
                         </a>
                         <div class="item-info">
-                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span>
+                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
                                     {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
@@ -37,7 +37,7 @@
                             <img :src="getImgUrl(nextItem(item.needitemid[1]).icon)" :alt="item.itemname"/>
                         </a>
                         <div class="item-info">
-                            <span class="needed-amount">{{ item.amount[1] * mod[index] }}x</span>
+                            <span class="needed-amount">{{ item.amount[1] * mod[index] }}x</span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[1]).vendorid).id}`">
                                     {{ getvendor(nextItem(item.needitemid[1]).vendorid).name }}
@@ -52,7 +52,7 @@
                             <img :src="getImgUrl(nextItem(item.needitemid[0]).icon)" :alt="item.itemname"/>
                         </a>
                         <div class="item-info">
-                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span>
+                            <span class="needed-amount">{{ item.amount[0] * mod[index] }}x</span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(item.needitemid[0]).vendorid).id}`">
                                     {{ getvendor(nextItem(item.needitemid[0]).vendorid).name }}
@@ -71,7 +71,7 @@
                         <div class="item-info">
                             <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] *
                                 mod[index] }}x
-                            </span>
+                            </span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
                                     {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
@@ -87,7 +87,7 @@
                         <div class="item-info">
                             <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[1]).amount[0] *
                                 mod[index] }}x
-                            </span>
+                            </span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).id}`">
                                     {{ getvendor(nextItem(nextItem(item.needitemid[1]).needitemid[0]).vendorid).name }}
@@ -105,7 +105,7 @@
                         <div class="item-info">
                             <span class="needed-amount">{{item.amount[0] * nextItem(item.needitemid[0]).amount[0] *
                                 mod[index] }}x
-                            </span>
+                            </span><br />
                             <span class="vendor">
                                 <a :data-wowhead="`npc=${getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).id}`">
                                     {{ getvendor(nextItem(nextItem(item.needitemid[0]).needitemid[0]).vendorid).name }}
@@ -196,6 +196,7 @@
 
     .vendor {
         text-decoration: underline;
+        margin-bottom: 10px;
     }
 
     section {
@@ -203,6 +204,7 @@
         max-width: 1024px;
         margin: 0 auto;
     }
+
 
 
     .item-info {
@@ -230,6 +232,8 @@
 
     .blue {
         border: 3px solid #0070dd;
+        padding: 10px;
+        margin-bottom: 10px;
     }
 
     .green {

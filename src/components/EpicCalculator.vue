@@ -168,6 +168,7 @@
 
     .vendor {
         text-decoration: underline;
+        margin-bottom: 10px;
     }
 
     section {
